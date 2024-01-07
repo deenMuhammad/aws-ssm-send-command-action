@@ -2,12 +2,8 @@ import { SSMClient, SendCommandCommand, ListCommandInvocationsCommand } from '@a
 import * as core from '@actions/core';
 
 async function main() {
-  const credentials = {
-    accessKeyId: core.getInput('aws-access-key-id'),
-    secretAccessKey: core.getInput('aws-secret-access-key'),
-  };
   const region = core.getInput('aws-region');
-  const client = new SSMClient({region, credentials});
+  const client = new SSMClient({region});
   const TimeoutSeconds = parseInt(core.getInput('timeout'));
   const parameters = core.getInput('parameters', {required: true});
   const command = new SendCommandCommand({

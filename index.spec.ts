@@ -11,8 +11,6 @@ const MockedSendCommand = SendCommandCommand as jest.Mocked<typeof SendCommandCo
 const getInput = core.getInput as jest.MockedFunction<typeof core.getInput>;
 
 const DEFAULT_INPUTS = new Map([
-  ['aws-access-key-id', 'aws-access-key-id'],
-  ['aws-secret-access-key', 'aws-secret-access-key'],
   ['aws-region', 'aws-region'],
   ['timeout', '60'],
   ['targets', '[{"Key":"InstanceIds","Values":["i-1234567890"]}]'],
